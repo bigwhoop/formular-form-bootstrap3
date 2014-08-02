@@ -1,6 +1,10 @@
 # Bootstrap 3 Templates for [Formular](https://github.com/bigwhoop/formular)
 
-## Instructions
+## Installation
+
+Use composer to install package `formular/form-bootstrap3`.
+
+## Use
 
 See examples directory. :)
 
