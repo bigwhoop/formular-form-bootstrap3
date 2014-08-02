@@ -21,6 +21,7 @@ class Bootstrap3Form extends Form
     const ORIENTATION_INLINE     = 'inline';
     
     const NS = 'bs3';
+    const NS_BASE = 'bs3_base';
     
     /** @var array */
     static protected $defaultOptions = [
@@ -47,7 +48,7 @@ class Bootstrap3Form extends Form
         ]);
         
         if (!empty($this->options['csrf_element_name'])) {
-            $this->addElement('input', [
+            $this->addElement('input@' . self::NS, [
                 'type'    => 'hidden',
                 'id,name' => $this->options['csrf_element_name'],
                 'value'   => $this->options['csrf_element_value'],
@@ -63,7 +64,7 @@ class Bootstrap3Form extends Form
     {
         $templateFactory = new FileBasedFactory();
         $templateFactory->addTemplatesPath(__DIR__ . '/../templates/' . $this->options['orientation'], self::NS);
-        $templateFactory->addTemplatesPath(__DIR__ . '/../templates/base', 'base');
+        $templateFactory->addTemplatesPath(__DIR__ . '/../templates/base', self::NS_BASE);
         $templateFactory->setDefaultNamespace($this->options['default_ns']);
         
         foreach ($this->options['template_paths'] as $ns => $path) {

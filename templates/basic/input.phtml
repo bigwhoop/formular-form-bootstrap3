@@ -1,8 +1,8 @@
 <?php if ($this->type == 'hidden'): ?>
-    <?= $this->partial('input_hidden@base'); ?>
+    <?= $this->partial('input_hidden@bs3_base'); ?>
 <?php else: ?>
     <div class="form-group">
-        <label <?= $this->id->attr(null, 'for'); ?>><?= $this->label; ?></label>
-        <?= $this->partial('input@base'); ?>
+        <label <?= $this->id->attr(null, 'for'); ?> class="<?= $this->required->val() ? 'required' : ''; ?>"><?= $this->label; ?></label>
+        <?= $this->partial('input@bs3_base'); ?>
     </div>
 <?php endif; ?>
