@@ -30,6 +30,7 @@ class Bootstrap3Form extends Form
         'errors_element'     => [],                            // array. Passed on to the errors element.
         'csrf_element_name'  => '',                            // string. If non-empty then a hidden element is automatically added ...
         'csrf_element_value' => '',                            // string. ... using this value.
+        'template_paths'     => [],                            // array. Values are paths, keys can optionally be namespaces (if strings).
     ];
     
     
@@ -64,6 +65,11 @@ class Bootstrap3Form extends Form
         $templateFactory->addTemplatesPath(__DIR__ . '/../templates/' . $this->options['orientation'], self::NS);
         $templateFactory->addTemplatesPath(__DIR__ . '/../templates/base', 'base');
         $templateFactory->setDefaultNamespace($this->options['default_ns']);
+        
+        foreach ($this->options['template_paths'] as $ns => $path) {
+            $templateFactory->addTemplatesPath($path, is_string($ns) ? $ns : null);
+        }
+        
         return $templateFactory;
     }
 }

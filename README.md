@@ -4,9 +4,9 @@
 
 Use composer to install package `formular/form-bootstrap3`.
 
-## Use
+## Usage
 
-See examples directory. :)
+See examples directory and `\bigwhoop\Formular\Form\Bootstrap3Form::$defaultOptions` array. :)
 
 ## License
 
