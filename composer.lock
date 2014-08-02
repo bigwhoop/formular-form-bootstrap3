@@ -4,9 +4,56 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6cbd7fab50d0c007952bfc6a3bbc1216",
+    "hash": "aca9b1cbcd642b5fe08e61e359e790a9",
     "packages": [],
     "packages-dev": [
+        {
+            "name": "formular/formular",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bigwhoop/formular.git",
+                "reference": "99ceff6050f3f1fa0c90d838ec22cdd80e239dee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bigwhoop/formular/zipball/99ceff6050f3f1fa0c90d838ec22cdd80e239dee",
+                "reference": "99ceff6050f3f1fa0c90d838ec22cdd80e239dee",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "zendframework/zend-escaper": "2.3.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.1.*",
+                "respect/validation": "0.6.*",
+                "zendframework/zend-validator": "2.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "bigwhoop\\Formular\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Philippe Gerber",
+                    "email": "philippe@bigwhoop.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Form Builder",
+            "keywords": [
+                "Forms",
+                "form"
+            ],
+            "time": "2014-08-02 19:51:54"
+        },
         {
             "name": "phpunit/php-code-coverage",
             "version": "2.0.9",
@@ -752,6 +799,46 @@
             "time": "2014-07-09 09:05:48"
         },
         {
+            "name": "zendframework/zend-escaper",
+            "version": "2.3.1",
+            "target-dir": "Zend/Escaper",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendEscaper.git",
+                "reference": "dddee2104337bbf3522f9ef591c361a40aabf7cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendEscaper/zipball/dddee2104337bbf3522f9ef591c361a40aabf7cc",
+                "reference": "dddee2104337bbf3522f9ef591c361a40aabf7cc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.23"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev",
+                    "dev-develop": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Zend\\Escaper\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "keywords": [
+                "escaper",
+                "zf2"
+            ],
+            "time": "2014-04-15 15:29:16"
+        },
+        {
             "name": "zendframework/zend-stdlib",
             "version": "2.3.1",
             "target-dir": "Zend/Stdlib",
@@ -865,7 +952,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "formular/formular": 20
+    },
     "prefer-stable": false,
     "platform": {
         "php": ">=5.4"
