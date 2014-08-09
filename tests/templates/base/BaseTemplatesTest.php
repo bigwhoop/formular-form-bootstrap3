@@ -36,12 +36,12 @@ HTML;
         $this->assertSame($expected, $this->renderTemplate('base', 'checkbox'));
     }
     
-    public function testCheckboxAttributesAndLabel()
+    public function testCheckboxAttributes()
     {
         $expected = <<<HTML
 <div class="checkbox">
     <label for="my-id">
-        <input type="checkbox" id="my-id" name="my-id" style="font-size&#x3A;&#x20;12px&#x3B;" value="1" >
+        <input type="checkbox" id="my-id" name="my-id" style="font-size&#x3A;&#x20;12px&#x3B;" value="1" checked>
         My Label    </label>
 </div>
 HTML;
@@ -52,19 +52,6 @@ HTML;
             'style'   => 'font-size: 12px;',
             'class'   => 'ignore-me',
             'value'   => 1,
-        ]));
-    }
-    
-    public function testCheckboxCheckedProperty()
-    {
-        $expected = <<<HTML
-<div class="checkbox">
-    <label >
-        <input type="checkbox"  value="on" checked>
-            </label>
-</div>
-HTML;
-        $this->assertSame($expected, $this->renderTemplate('base', 'checkbox', [
             'checked' => true,
         ]));
     }
@@ -74,12 +61,12 @@ HTML;
         $expected = <<<HTML
     <div class="checkbox">
         <label>
-            <input type="checkbox" name="my_id[]" id="my_id_l1" value="set" >
+            <input type="checkbox" name="my_id[]" id="my_id_l1" value="l1" >
             Label 1        </label>
     </div>
     <div class="checkbox">
         <label>
-            <input type="checkbox" name="my_id[]" id="my_id_l2" value="set" checked>
+            <input type="checkbox" name="my_id[]" id="my_id_l2" value="l2" checked>
             Label 2        </label>
     </div>
 
@@ -87,12 +74,11 @@ HTML;
         $this->assertSame($expected, $this->renderTemplate('base', 'checkboxes', [
             'id'      => 'my_id',
             'name'    => 'my_id',
-            'value'   => 'set',
             'options' => [
                 'l1' => 'Label 1',
                 'l2' => 'Label 2',
             ],
-            'checked' => ['l2'],
+            'value' => ['l2'],
         ]));
     }
     
@@ -101,12 +87,12 @@ HTML;
         $expected = <<<HTML
     <div class="checkbox">
         <label>
-            <input type="checkbox" name="[]" id="_0" value="on" >
+            <input type="checkbox" name="[]" id="_0" value="0" >
             Label 1        </label>
     </div>
     <div class="checkbox">
         <label>
-            <input type="checkbox" name="[]" id="_1" value="on" >
+            <input type="checkbox" name="[]" id="_1" value="1" >
             Label 2        </label>
     </div>
 
