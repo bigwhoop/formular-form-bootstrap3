@@ -1,7 +1,7 @@
-<?php foreach ((array)$this->options->val() as $value => $label): ?>
+<?php foreach ((array)$this->options->val() as $option => $label): ?>
     <div class="checkbox">
         <label>
-            <input type="checkbox" name="<?= $this->name; ?>[]" id="<?= $this->id . '_' . $value; ?>" value="<?= $value; ?>" <?= $this->checked->prop(in_array($value, (array)$this->value->val())); ?>>
+            <input type="checkbox" name="<?= $this->name; ?>[]" id="<?= $this->id . '_' . $option; ?>" <?= $this->value->attr('on'); ?> <?= in_array($option, (array)$this->checked->val()) ? 'checked' : ''; ?>>
             <?= $label; ?>
         </label>
     </div>

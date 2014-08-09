@@ -1,5 +1,5 @@
 <?php
-namespace Tests\Formular\Form\Bootstrap3\Bootstrap3Form;
+namespace Tests\Formular\Form\Bootstrap3;
 use bigwhoop\Formular\Form\Bootstrap3\Bootstrap3Form;
 use bigwhoop\Formular\TemplateFactory\FileBasedFactory;
 

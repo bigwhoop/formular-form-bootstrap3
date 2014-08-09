@@ -15,9 +15,9 @@ $form->addElement('input', ['id,name' => 'last_name', 'label' => 'Last Name', 'p
 $form->addElement('input', ['id,name,type' => 'email', 'label' => 'E-Mail', 'placeholder' => 'Your e-mail address']);
 $form->addElement('input', ['id,name,type' => 'password', 'label' => 'Password']);
 $form->addElement('input', ['id,name' => 'password_confirmation', 'type' => 'password', 'label' => 'Password Confirmation']);
-$form->addElement('checkboxes', ['id,name' => 'interests', 'label' => 'Interests', 'value' => [0,1], 'options' => ['Sports', 'Technology', 'Nature', 'Politics']]);
+$form->addElement('checkboxes', ['id,name' => 'interests', 'label' => 'Interests', 'checked' => [0, 1, 3], 'options' => ['Sports', 'Technology', 'Nature', 'Politics']]);
 $form->addElement('radios', ['id,name' => 'language', 'label' => 'Prefered Language', 'value' => 'en', 'options' => ['en' => 'English', 'de' => 'Deutsch', 'fr' => 'Français']]);
-$form->addElement('checkbox', ['id,name' => 'newsletter', 'label' => 'I want to get spammed by your newsletter', 'value' => 'yes']);
+$form->addElement('checkbox', ['id,name' => 'newsletter', 'label' => 'I want to get spammed by your newsletter', 'value' => 'yes', 'checked' => true]);
 $form->addElement('checkbox', ['id,name' => 'accept_tos', 'label' => 'I accept the terms of service']);
 $form->addElement('submit', ['label' => 'Register']);
 

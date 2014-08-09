@@ -15,6 +15,11 @@ Use composer: `composer require "formular/form-bootstrap3":"1.0.*"`.
 
 See examples directory and `\bigwhoop\Formular\Form\Bootstrap3\Bootstrap3Form::$defaultOptions` array. :)
 
+    cd examples
+    php -S localhost:8004
+
+Then go to [http://localhost:8004/horizontal-form.php](http://localhost:8004/horizontal-form.php).
+
 ## License
 
 See LICENSE file.
