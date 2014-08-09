@@ -289,8 +289,7 @@ HTML;
     public function testTeatareaAttributes()
     {
         $expected = <<<HTML
-<textarea class="form-control my-class&#x20;my-other-class" rows="10" id="my_id" name="my_name" style="font-weight&#x3A;&#x20;bold&#x3B;" placeholder="Placeholder&#x20;..." disabled>Something
-is going on.</textarea>
+<textarea class="form-control my-class&#x20;my-other-class" rows="10" id="my_id" name="my_name" style="font-weight&#x3A;&#x20;bold&#x3B;" placeholder="Placeholder&#x20;..." disabled>Something is going on.</textarea>
 HTML;
         $this->assertSame($expected, $this->renderTemplate('base', 'textarea', [
             'rows'        => 10,
@@ -299,7 +298,7 @@ HTML;
             'class'       => 'my-class my-other-class',
             'style'       => 'font-weight: bold;',
             'placeholder' => 'Placeholder ...',
-            'value'       => "Something\r\nis going on.",
+            'value'       => "Something is going on.",
             'disabled'    => true,
         ]));
     }
