@@ -1,0 +1,5 @@
+<select class="form-control <?= $this->class->attrVal(); ?>" <?= $this->attr(['id', 'name', 'style']); ?>>
+    <?php foreach ((array)$this->options->val() as $value => $label): ?>
+        <option value="<?= $value; ?>" <?= $this->selected->prop($value === $this->value->val()); ?>><?= $label; ?></option>
+    <?php endforeach; ?>
+</select>

@@ -17,6 +17,8 @@ $form->addElement('input', ['id,name,type' => 'password', 'label' => 'Password']
 $form->addElement('input', ['id,name' => 'password_confirmation', 'type' => 'password', 'label' => 'Password Confirmation']);
 $form->addElement('checkboxes', ['id,name' => 'interests', 'label' => 'Interests', 'checked' => [0, 1, 3], 'options' => ['Sports', 'Technology', 'Nature', 'Politics']]);
 $form->addElement('radios', ['id,name' => 'language', 'label' => 'Prefered Language', 'value' => 'en', 'options' => ['en' => 'English', 'de' => 'Deutsch', 'fr' => 'Français']]);
+$form->addElement('textarea', ['id,name' => 'note', 'label' => 'About You', 'placeholder' => 'Tell us about yourself ...']);
+$form->addElement('select', ['id,name' => 'age', 'label' => 'Age Group', 'value' => 1, 'options' => ['<20', '20 - 50', '50+']]);
 $form->addElement('checkbox', ['id,name' => 'newsletter', 'label' => 'I want to get spammed by your newsletter', 'value' => 'yes', 'checked' => true]);
 $form->addElement('checkbox', ['id,name' => 'accept_tos', 'label' => 'I accept the terms of service']);
 $form->addElement('submit', ['label' => 'Register']);

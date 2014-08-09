@@ -254,6 +254,38 @@ HTML;
         $this->assertSame('', $this->renderTemplate('base', 'radios'));
     }
     
+    public function testSelect()
+    {
+        $expected = <<<HTML
+<select class="form-control " >
+    </select>
+HTML;
+        $this->assertSame($expected, $this->renderTemplate('base', 'select'));
+    }
+    
+    public function testSelectAttributes()
+    {
+        $expected = <<<HTML
+<select class="form-control my-class&#x20;my-other-class" id="my_id" name="my_name" style="font-weight&#x3A;&#x20;bold&#x3B;">
+            <option value="one" >One</option>
+            <option value="two" selected>Two</option>
+            <option value="three" >Three</option>
+    </select>
+HTML;
+        $this->assertSame($expected, $this->renderTemplate('base', 'select', [
+            'id'      => 'my_id',
+            'name'    => 'my_name',
+            'class'   => 'my-class my-other-class',
+            'style'   => 'font-weight: bold;',
+            'value'   => 'two',
+            'options' => [
+                'one'   => 'One',
+                'two'   => 'Two',
+                'three' => 'Three',
+            ],
+        ]));
+    }
+    
     public function testSubmit()
     {
         $expected = <<<HTML
@@ -271,6 +303,31 @@ HTML;
             'name'  => 'my_submit',
             'class' => 'btn-danger btn-lg',
             'label' => 'My label',
+        ]));
+    }
+    
+    public function testTextarea()
+    {
+        $expected = <<<HTML
+<textarea class="form-control " rows="3" ></textarea>
+HTML;
+        $this->assertSame($expected, $this->renderTemplate('base', 'textarea'));
+    }
+    
+    public function testTeatareaAttributes()
+    {
+        $expected = <<<HTML
+<textarea class="form-control my-class&#x20;my-other-class" rows="10" id="my_id" name="my_name" style="font-weight&#x3A;&#x20;bold&#x3B;" placeholder="Placeholder&#x20;...">Something
+is going on.</textarea>
+HTML;
+        $this->assertSame($expected, $this->renderTemplate('base', 'textarea', [
+            'rows'        => 10,
+            'id'          => 'my_id',
+            'name'        => 'my_name',
+            'class'       => 'my-class my-other-class',
+            'style'       => 'font-weight: bold;',
+            'placeholder' => 'Placeholder ...',
+            'value'       => "Something\r\nis going on.",
         ]));
     }
 }
