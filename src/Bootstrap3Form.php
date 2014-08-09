@@ -18,7 +18,6 @@ class Bootstrap3Form extends Form
 {
     const ORIENTATION_BASIC      = 'basic';
     const ORIENTATION_HORIZONTAL = 'horizontal';
-    const ORIENTATION_INLINE     = 'inline';
     
     const NS = 'bs3';
     const NS_BASE = 'bs3_base';
@@ -63,8 +62,8 @@ class Bootstrap3Form extends Form
     protected function createDefaultFactory()
     {
         $templateFactory = new FileBasedFactory();
-        $templateFactory->addTemplatesPath(__DIR__ . '/../templates/' . $this->options['orientation'], self::NS);
-        $templateFactory->addTemplatesPath(__DIR__ . '/../templates/base', self::NS_BASE);
+        $templateFactory->addTemplatesPath(realpath(__DIR__ . '/../templates/' . $this->options['orientation']), self::NS);
+        $templateFactory->addTemplatesPath(realpath(__DIR__ . '/../templates/base'), self::NS_BASE);
         $templateFactory->setDefaultNamespace($this->options['default_ns']);
         
         foreach ($this->options['template_paths'] as $ns => $path) {

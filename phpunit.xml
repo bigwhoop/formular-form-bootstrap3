@@ -11,8 +11,25 @@
          syntaxCheck="false"
 >
     <testsuites>
-        <testsuite name="Formular Test Suite">
+        <testsuite name="Bootstrap 3 Formular Test Suite">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>
+    
+    <filter>
+        <whitelist>
+            <directory>./src</directory>
+        </whitelist>
+    </filter>
+    
+    <logging>
+        <log type="coverage-html"
+             target="./log/code_coverage"
+             charset="UTF-8"
+             yui="true"
+             highlight="true"
+             lowUpperBound="50"
+             highLowerBound="80"
+        />
+    </logging>
 </phpunit>
