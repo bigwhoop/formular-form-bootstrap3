@@ -7,7 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace bigwhoop\Formular\Form;
+namespace bigwhoop\Formular\Form\Bootstrap3;
 use bigwhoop\Formular\Form;
 use bigwhoop\Formular\TemplateFactory\FileBasedFactory;
 

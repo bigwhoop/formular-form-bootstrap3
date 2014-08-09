@@ -22,7 +22,7 @@
   },  
   "autoload": {  
     "psr-4": {
-      "bigwhoop\\Formular\\Form\\": "src/"
+      "bigwhoop\\Formular\\Form\\Bootstrap3\\": "src/"
     }
   },
   "minimum-stability": "stable"
