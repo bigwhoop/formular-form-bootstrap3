@@ -1,4 +1,4 @@
-<select class="form-control <?= $this->class->attrVal(); ?>" <?= $this->attr(['id', 'name', 'style']); ?>>
+<select class="form-control <?= $this->class->attrVal(); ?>" <?= $this->attr(['id', 'name', 'style']); ?> <?= $this->disabled->prop(); ?>>
     <?php foreach ((array)$this->options->val() as $value => $label): ?>
         <option value="<?= $value; ?>" <?= $this->selected->prop($value === $this->value->val()); ?>><?= $label; ?></option>
     <?php endforeach; ?>

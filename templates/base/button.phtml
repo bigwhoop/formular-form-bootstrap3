@@ -1,1 +1,1 @@
-<button <?= $this->type->attr('button'); ?> class="btn <?= $this->class->attrVal('btn-default'); ?>"><?= $this->label->str('Click'); ?></button>
+<button <?= $this->type->attr('button'); ?> class="btn <?= $this->class->attrVal('btn-default'); ?>" <?= $this->disabled->prop(); ?>><?= $this->label->str('Click'); ?></button>

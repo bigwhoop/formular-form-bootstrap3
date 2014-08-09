@@ -6,37 +6,20 @@ class BaseTemplatesTest extends AbstractTemplatesTest
     public function testButton()
     {
         $this->assertSame(
-            '<button type="button" class="btn btn-default">Click</button>',
+            '<button type="button" class="btn btn-default" >Click</button>',
             $this->renderTemplate('base', 'button')
         );
     }
     
-    public function testButtonType()
+    public function testButtonAttributes()
     {
         $this->assertSame(
-            '<button type="submit" class="btn btn-default">Click</button>',
+            '<button type="submit" class="btn btn-danger&#x20;btn-lg" disabled>Submit me!</button>',
             $this->renderTemplate('base', 'button', [
-                'type' => 'submit',
-            ])
-        );
-    }
-    
-    public function testButtonClass()
-    {
-        $this->assertSame(
-            '<button type="button" class="btn btn-danger&#x20;btn-lg">Click</button>',
-            $this->renderTemplate('base', 'button', [
-                'class' => 'btn-danger btn-lg',
-            ])
-        );
-    }
-    
-    public function testButtonLabel()
-    {
-        $this->assertSame(
-            '<button type="button" class="btn btn-default">Submit me!</button>',
-            $this->renderTemplate('base', 'button', [
-                'label' => 'Submit me!',
+                'type'     => 'submit',
+                'class'    => 'btn-danger btn-lg',
+                'label'    => 'Submit me!',
+                'disabled' => true,
             ])
         );
     }
@@ -162,7 +145,7 @@ HTML;
     public function testInput()
     {
         $expected = <<<HTML
-<input type="text" class="form-control " >
+<input type="text" class="form-control "  >
 HTML;
         $this->assertSame($expected, $this->renderTemplate('base', 'input'));
     }
@@ -170,7 +153,7 @@ HTML;
     public function testInputAttributes()
     {
         $expected = <<<HTML
-<input type="password" class="form-control my-class&#x20;my-other-class" id="my_id" name="my_name" style="font-weight&#x3A;&#x20;bold&#x3B;" placeholder="Placeholder&#x20;..." value="Something">
+<input type="password" class="form-control my-class&#x20;my-other-class" id="my_id" name="my_name" style="font-weight&#x3A;&#x20;bold&#x3B;" placeholder="Placeholder&#x20;..." value="Something" disabled>
 HTML;
         $this->assertSame($expected, $this->renderTemplate('base', 'input', [
             'type'        => 'password',
@@ -180,6 +163,7 @@ HTML;
             'style'       => 'font-weight: bold;',
             'placeholder' => 'Placeholder ...',
             'value'       => 'Something',
+            'disabled'    => true,
         ]));
     }
     
@@ -257,7 +241,7 @@ HTML;
     public function testSelect()
     {
         $expected = <<<HTML
-<select class="form-control " >
+<select class="form-control "  >
     </select>
 HTML;
         $this->assertSame($expected, $this->renderTemplate('base', 'select'));
@@ -266,7 +250,7 @@ HTML;
     public function testSelectAttributes()
     {
         $expected = <<<HTML
-<select class="form-control my-class&#x20;my-other-class" id="my_id" name="my_name" style="font-weight&#x3A;&#x20;bold&#x3B;">
+<select class="form-control my-class&#x20;my-other-class" id="my_id" name="my_name" style="font-weight&#x3A;&#x20;bold&#x3B;" disabled>
             <option value="one" >One</option>
             <option value="two" selected>Two</option>
             <option value="three" >Three</option>
@@ -283,13 +267,14 @@ HTML;
                 'two'   => 'Two',
                 'three' => 'Three',
             ],
+            'disabled' => true,
         ]));
     }
     
     public function testSubmit()
     {
         $expected = <<<HTML
-<button type="submit" class="btn btn-primary" name="submit">Submit</button>
+<button type="submit" class="btn btn-primary" name="submit" >Submit</button>
 HTML;
         $this->assertSame($expected, $this->renderTemplate('base', 'submit'));
     }
@@ -297,19 +282,20 @@ HTML;
     public function testSubmitAttributes()
     {
         $expected = <<<HTML
-<button type="submit" class="btn btn-danger&#x20;btn-lg" name="my_submit">My label</button>
+<button type="submit" class="btn btn-danger&#x20;btn-lg" name="my_submit" disabled>My label</button>
 HTML;
         $this->assertSame($expected, $this->renderTemplate('base', 'submit', [
-            'name'  => 'my_submit',
-            'class' => 'btn-danger btn-lg',
-            'label' => 'My label',
+            'name'     => 'my_submit',
+            'class'    => 'btn-danger btn-lg',
+            'label'    => 'My label',
+            'disabled' => true,
         ]));
     }
     
     public function testTextarea()
     {
         $expected = <<<HTML
-<textarea class="form-control " rows="3" ></textarea>
+<textarea class="form-control " rows="3"  ></textarea>
 HTML;
         $this->assertSame($expected, $this->renderTemplate('base', 'textarea'));
     }
@@ -317,7 +303,7 @@ HTML;
     public function testTeatareaAttributes()
     {
         $expected = <<<HTML
-<textarea class="form-control my-class&#x20;my-other-class" rows="10" id="my_id" name="my_name" style="font-weight&#x3A;&#x20;bold&#x3B;" placeholder="Placeholder&#x20;...">Something
+<textarea class="form-control my-class&#x20;my-other-class" rows="10" id="my_id" name="my_name" style="font-weight&#x3A;&#x20;bold&#x3B;" placeholder="Placeholder&#x20;..." disabled>Something
 is going on.</textarea>
 HTML;
         $this->assertSame($expected, $this->renderTemplate('base', 'textarea', [
@@ -328,6 +314,7 @@ HTML;
             'style'       => 'font-weight: bold;',
             'placeholder' => 'Placeholder ...',
             'value'       => "Something\r\nis going on.",
+            'disabled'    => true,
         ]));
     }
 }

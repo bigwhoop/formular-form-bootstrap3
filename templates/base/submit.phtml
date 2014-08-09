@@ -1,1 +1,1 @@
-<button type="submit" class="btn <?= $this->class->attrVal('btn-primary'); ?>" <?= $this->name->attr('submit'); ?>><?= $this->label->str('Submit'); ?></button>
+<button type="submit" class="btn <?= $this->class->attrVal('btn-primary'); ?>" <?= $this->name->attr('submit'); ?> <?= $this->disabled->prop(); ?>><?= $this->label->str('Submit'); ?></button>
